@@ -1,7 +1,7 @@
 package com.example.dataingestionservice.service;
 
 import com.example.dataingestionservice.model.MobilePayment;
-import com.example.dataingestionservice.producer.MobilePaymentProducer;
+import com.example.dataingestionservice.kafka.MobilePaymentProducer;
 import com.example.dataingestionservice.repository.MobilePaymentRepository;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
