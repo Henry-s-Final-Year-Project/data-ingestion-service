@@ -26,7 +26,7 @@ public class CardTransactionService {
 
         if (!cardTransactions.isEmpty()){
             CardTransaction ct = cardTransactions.get(0);
-            producer.sendCardTransaction(ct.toString());
+            producer.sendCardTransaction(ct);
             System.out.println();
             System.out.println("Sent: " + ct);
             System.out.println();
