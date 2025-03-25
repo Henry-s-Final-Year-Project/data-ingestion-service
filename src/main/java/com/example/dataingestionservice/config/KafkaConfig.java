@@ -3,6 +3,7 @@ package com.example.dataingestionservice.config;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.common.internals.Topic;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,14 @@ public class KafkaConfig {
     @Bean
     public NewTopic mobilePaymentTopic() {
         return TopicBuilder.name("mobile-payments-topic")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
+
+    @Bean
+    public NewTopic cardTransactionTopic() {
+        return TopicBuilder.name("card-raw-data-topic")
                 .partitions(1)
                 .replicas(1)
                 .build();

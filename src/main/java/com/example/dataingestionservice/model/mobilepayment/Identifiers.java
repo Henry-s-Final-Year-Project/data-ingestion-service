@@ -1,4 +1,4 @@
-package com.example.dataingestionservice.model;
+package com.example.dataingestionservice.model.mobilepayment;
 
 public class Identifiers {
     private String MID;

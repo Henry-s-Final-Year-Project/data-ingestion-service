@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  data-ingestion-service:
+    image: data-ingestion-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - SPRING_DATA_MONGODB_URI=mongodb+srv://Henry:Henry2002@real-time-transactional.f2kju.mongodb.net/?retryWrites=true&w=majority&appName=Real-Time-Transactional-Source
+    networks:
+      - kafka-net
+networks:
+  kafka-net:
+    external: true

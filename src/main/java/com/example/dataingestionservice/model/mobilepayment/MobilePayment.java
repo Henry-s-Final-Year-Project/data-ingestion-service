@@ -1,4 +1,4 @@
-package com.example.dataingestionservice.model;
+package com.example.dataingestionservice.model.mobilepayment;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
