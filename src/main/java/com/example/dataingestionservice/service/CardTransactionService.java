@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.awt.*;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class CardTransactionService {
@@ -24,8 +25,10 @@ public class CardTransactionService {
     public void fetchAndSendData() {
         List<CardTransaction> cardTransactions = repository.findAll();
 
-        if (!cardTransactions.isEmpty()){
-            CardTransaction ct = cardTransactions.get(0);
+        if (!cardTransactions.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(cardTransactions.size());  // random index
+            CardTransaction ct = cardTransactions.get(randomIndex);    // pick random one
             producer.sendCardTransaction(ct);
             System.out.println();
             System.out.println("Sent: " + ct);

@@ -18,18 +18,18 @@ public class MobilePaymentService {
         this.repository = repository;
         this.producer = producer;
     }
-
-    @Scheduled(fixedRate = 15000)
-    public void fetchAndSendData() {
-        List<MobilePayment> payments = repository.findAll();
-
-        if (!payments.isEmpty()) {
-            MobilePayment payment = payments.get(0);
-            producer.sendMobilePayment(payment.toString());
-            System.out.println();
-            System.out.println("Sent: " + payment);
-            System.out.println();
-
-        }
-    }
+//
+//    @Scheduled(fixedRate = 15000)
+//    public void fetchAndSendData() {
+//        List<MobilePayment> payments = repository.findAll();
+//
+//        if (!payments.isEmpty()) {
+//            MobilePayment payment = payments.get(0);
+////            producer.sendMobilePayment(payment.toString());
+//            System.out.println();
+//            System.out.println("Sent: " + payment);
+//            System.out.println();
+//
+//        }
+//    }
 }
